@@ -1,0 +1,18 @@
+| {% load coffeescript %}
+script(type='text/javascript')
+    {% inlinecoffeescript %}
+    console.log "Hello, World!"
+    alert 'poil'
+    {% endinlinecoffeescript %}
+| {% if error %}
+| {{error}}
+| {% endif %}
+| {% if success %}
+| {{success}}
+| {% endif %}
+| {% if form %}
+form(action='', method='POST', enctype='multipart/form-data')
+    | {% csrf_token %}
+    | {{form}}
+    input(type='submit')
+| {% endif %}
